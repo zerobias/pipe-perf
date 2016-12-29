@@ -15,7 +15,7 @@
   ],
   "env": {
     "node"  : true,
-    "browser": true,
+    "browser": false,
     "es6"   : true
   },
   "rules": {
@@ -28,6 +28,7 @@
     "no-unneeded-ternary"  : "warn",
     "no-underscore-dangle" : "warn",
     "prefer-const"         : "warn",
+    "no-constant-condition": "off",
 
     //General
     "arrow-body-style"     : ["error", "as-needed"],
@@ -127,7 +128,6 @@
     }],
     "no-with"              : "error",
     "no-new-func"          : "error",
-    "prefer-rest-params"   : "error",
     "prefer-spread"        : "error",
     //Unnecessary semicolon is an annoying visual clutter
     "no-extra-semi"        : "error",
