@@ -2,31 +2,6 @@
 
 const data = [ 0, 10, 33, '58', 30e2, -Infinity, NaN, null, 'abc', '-2e2' ]
 
-const randomIndex = range => Math.round(Math.random()*range)
-
-function* shuffle(input) {
-  const ln = input.length-1
-  while (true) {
-    const result = [],
-          temp = [...input]
-    for (let i = ln; i >= 0; i--) {
-      const index = randomIndex(i)
-      result.push(temp[index])
-      temp.splice(index, 1)
-    }
-    yield result
-  }
-}
-
-
-const Shuffle = list => {
-  const generator = shuffle(list)
-  return () => generator.next().value
-}
-
-const randomData = Shuffle(data)
-
-// const numFilter = e => isFinite(+e)
 
 const steps = [
   (list, val1=0, val2=0) => [ val1, val2, ...list ],
@@ -52,4 +27,4 @@ const steps = [
 
 console.log(steps.length)
 
-module.exports = { steps, randomData, Shuffle }
+module.exports = { data, steps }

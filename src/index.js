@@ -1,6 +1,9 @@
 'use strict'
-const tests = require('./tester')
 
-tests.redux.run()
+const { Suite, benchPresets } = require('./bench')
+const { standart } = require('./tests.js')
+
+const test = Suite(benchPresets.full.fast)(standart)
+test.run()
 
 //TODO look at https://github.com/stoeffel/compose-function
