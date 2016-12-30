@@ -4,7 +4,7 @@
 node_modules
 typings
 .vscode
-
+typings.json
 dist
 coverage
 build
